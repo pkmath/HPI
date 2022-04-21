@@ -10,7 +10,7 @@ import streamlit as st
 import plotly.express as px
 
 
-avgerr = pd.read_csv('C:\\Users\\Notis\\Desktop\\landreg\\SSavg.csv', index_col=0)
+avgerr = pd.read_csv('SSavg.csv', index_col=0)
 avgerr = avgerr.iloc[1:]
 avgerr = avgerr.dropna(how='all', axis=1)
 avgerr = avgerr.stack()
@@ -21,7 +21,7 @@ avgerr.columns = ['Year','Postcode','HPI']
 ops = avgerr['Postcode'].unique()
 labels = [{'label':i, 'value':i} for i in ops]
 ####################################################################################
-avgpr = pd.read_csv('C:\\Users\\Notis\\Desktop\\landreg\\SSer.csv', index_col=0)
+avgpr = pd.read_csv('SSer.csv', index_col=0)
 avgpr = avgpr.iloc[1:]
 avgpr = avgpr.dropna(how='all', axis=1)
 avgpr = avgpr.stack()
